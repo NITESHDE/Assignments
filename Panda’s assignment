@@ -1,0 +1,174 @@
+Q1. To load a CSV file into a Pandas DataFrame, you can use the pd.read_csv function:
+
+python
+Copy code
+import pandas as pd
+df = pd.read_csv('file.csv')
+Q2. To check the data type of a column in a Pandas DataFrame, you can use the dtypes attribute:
+
+scss
+Copy code
+column_name = df['column_name']
+print(column_name.dtypes)
+Q3. To select rows from a Pandas DataFrame based on a condition, you can use boolean indexing:
+
+bash
+Copy code
+condition = df['column_name'] > value
+filtered_df = df[condition]
+Q4. To rename columns in a Pandas DataFrame, you can use the rename method:
+
+python
+Copy code
+df.rename(columns={'old_column_name': 'new_column_name'}, inplace=True)
+Q5. To drop columns in a Pandas DataFrame, you can use the drop method:
+
+css
+Copy code
+df.drop(columns=['column_name'], inplace=True)
+Q6. To find the unique values in a column of a Pandas DataFrame, you can use the unique method:
+
+scss
+Copy code
+unique_values = df['column_name'].unique()
+Q7. To find the number of missing values in each column of a Pandas DataFrame, you can use the isna method and sum method:
+
+scss
+Copy code
+missing_values = df.isna().sum()
+Q8. To fill missing values in a Pandas DataFrame with a specific value, you can use the fillna method:
+
+python
+Copy code
+df.fillna(value, inplace=True)
+
+9.
+To concatenate two Pandas DataFrames, you can use the pd.concat() function. The syntax is:
+css
+Copy code
+pd.concat([df1, df2], axis=0)
+where df1 and df2 are the two dataframes you want to concatenate and axis=0 concatenates the dataframes vertically (row-wise).
+10.
+To merge two Pandas DataFrames on a specific column, you can use the pd.merge() function. The syntax is:
+sql
+Copy code
+pd.merge(left, right, on='column_name')
+where left and right are the two dataframes you want to merge and 'column_name' is the column on which you want to merge the dataframes.
+11.
+
+To group data in a Pandas DataFrame by a specific column and apply an aggregation function, you can use the groupby method. The syntax is:
+scss
+Copy code
+df.groupby('column_name').aggregate_function()
+where 'column_name' is the column by which you want to group the data and aggregate_function is the function you want to apply to the grouped data (e.g. mean, sum, count, etc.).
+12
+To pivot a Pandas DataFrame, you can use the pivot method. The syntax is:
+perl
+Copy code
+df.pivot(index='index_column', columns='column_to_be_columns', values='column_to_be_values')
+where index_column is the column that you want to set as the index, column_to_be_columns is the column that you want to use as the new columns, and column_to_be_values is the column that you want to use as the values in the new pivoted dataframe.
+13
+To change the data type of a column in a Pandas DataFrame, you can use the astype method. The syntax is:
+scss
+Copy code
+df['column_name'] = df['column_name'].astype(new_dtype)
+where 'column_name' is the name of the column whose data type you want to change and new_dtype is the new data type you want to convert the column to (e.g. int, float, str, etc.).
+14
+To sort a Pandas DataFrame by a specific column, you can use the sort_values method. The syntax is:
+python
+Copy code
+df.sort_values(by='column_name', ascending=True/False)
+where 'column_name' is the name of the column you want to sort the dataframe by and ascending=True/False specifies whether you want to sort the data in ascending or descending order.
+15
+To create a copy of a Pandas DataFrame, you can use the copy method. The syntax is:
+go
+Copy code
+df_copy = df.copy()
+where df_copy is the name of the new dataframe that is a copy of the original dataframe df.
+
+16.
+To filter rows of a Pandas DataFrame based on multiple conditions, you can use the & operator to specify multiple conditions, and then use boolean indexing to return the desired rows. For example:
+bash
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df[(df['A'] > 2) & (df['B'] > 200)]
+17.
+To calculate the mean of a column in a Pandas DataFrame, you can use the mean() method. For example:
+less
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df['A'].mean()
+18.
+To calculate the standard deviation of a column in a Pandas DataFrame, you can use the std() method. For example:
+less
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df['A'].std()
+19.
+To calculate the correlation between two columns in a Pandas DataFrame, you can use the corr() method. For example:
+bash
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df['A'].corr(df['B'])
+20.
+To select specific columns in a DataFrame using their labels, you can use the indexing operator [] and provide a list of column labels. For example:
+lua
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df[['A']]
+21.
+To select specific rows in a DataFrame using their indexes, you can use the iloc property, which allows you to select rows based on their integer-based position. For example:
+less
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df.iloc[1:3]
+22.
+To sort a DataFrame by a specific column, you can use the sort_values() method and provide the name of the column you want to sort by. For example:
+less
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df.sort_values(by='A')
+23.
+To create a new column in a DataFrame based on the values of another column, you can assign the result of a calculation to a new column. For example:
+less
+Copy code
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [100, 200, 300, 400]})
+df['C'] = df['A'] * df['B']
+
+Q24. To remove duplicates from a Pandas DataFrame, you can use the drop_duplicates method. For example:
+
+python
+Copy code
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 2, 3, 4, 5, 5, 6],
+                   'B': ['a', 'b', 'b', 'c', 'd', 'e', 'e', 'f']})
+
+df = df.drop_duplicates()
+
+
+Q25. .loc and .iloc are two indexers in Pandas used to select data from a DataFrame.
+
+.loc is used to access data by labels, meaning you can select data based on row and column labels. For example:
+
+less
+Copy code
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3, 4],
+                   'B': ['a', 'b', 'c', 'd']},
+                  index=[0, 1, 2, 3])
+
+df.loc[0:2, 'A']
+.iloc is used to access data by integer-based positional indexing, meaning you can select data based on row and column positions. For example:
+
+less
+Copy code
+import pandas as pd
+
+df = pd.DataFrame({'A': [1, 2, 3, 4],
+                   'B': ['a', 'b', 'c', 'd']},
+                  index=[0, 1, 2, 3])
+
+df.iloc[0:2, 0]
+In summary, .loc is used for label-based indexing and .iloc is used for integer-based positional indexing
