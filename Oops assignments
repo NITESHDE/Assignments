@@ -1,0 +1,91 @@
+Answers:
+1.
+The purpose of Python's Object-Oriented Programming (OOP) is to provide a way of organizing code that makes it more reusable, maintainable, and easier to understand. OOP allows developers to model real-world objects and their interactions, by defining classes and objects, which can be used to encapsulate data and behavior.
+2.
+When searching for an attribute, Python first looks for it in the current instance, and then in the class and its superclasses, using the method resolution order (MRO). This process continues until the attribute is found or an AttributeError is raised.
+3.
+A class object is a blueprint for creating instances, while an instance object is a specific realization of a class. A class object is created using the class keyword and an instance object is created using the class name as a function.
+4.
+The first argument in a class’s method function, conventionally named self, refers to the instance that the method is being called on. It is used to access instance attributes and other instance-level information.
+5.
+The __init__ method is a special method in Python classes that is called when an instance of the class is created. It is used to initialize the attributes of the class and perform any other setup tasks that are necessary.
+6.
+To create a class instance, you need to call the class as if it were a function, passing any necessary arguments. This will call the __init__ method, which will initialize the instance and return it.
+7.
+To create a class, you use the class keyword followed by the class name and a colon. Then you define the attributes and methods of the class within the indented block that follows.
+8.
+The superclasses of a class are the classes that the class inherits from. A class can inherit attributes and behaviors from its superclasses, allowing you to create new classes that build on existing ones.
+9.
+Classes and modules are related in that a class can be defined within a module, and a module can contain multiple classes. Modules provide a way to organize related classes and other code into a single unit that can be imported and used in other parts of a program.
+10.
+To make a class, you use the class keyword, followed by the class name and a colon. To make an instance of a class, you call the class as if it were a function, passing any necessary arguments.
+11.
+Class attributes are created within the class definition, outside of any methods. They are shared by all instances of the class, and can be accessed using the class name followed by the attribute name.
+12.
+Instance attributes are created within the __init__ method or any other instance method. They are unique to each instance of the class, and can be accessed using the self keyword followed by the attribute name.
+13.
+The term "self" in a Python class refers to the instance that the method is being called on. It is used to access instance attributes and other instance-level information.
+Q14. In Python, operator overloading allows you to define custom behavior for built-in operators when used with instances of a class. This is achieved by defining special methods in the class with a specific syntax, such as __add__ for the + operator, __str__ for the str() function, etc.
+
+Q15. You should consider allowing operator overloading of your classes when you want to define custom behavior for built-in operators that makes sense for instances of the class. For example, if you have a class that represents a mathematical vector, you might want to overload the + operator to perform vector addition.
+
+Q16. The most popular form of operator overloading is probably the use of special methods to define the behavior of built-in operators, such as the + operator or the str() function.
+
+Q17. The two most important concepts to grasp in order to comprehend Python OOP code are classes and objects. A class defines the blueprint for creating objects, and an object is an instance of a class that has its own data and behavior.
+
+Q18. Three applications for exception processing are:
+
+Error handling: exceptions can be used to handle unexpected errors that occur during the execution of a script, such as division by zero or accessing an index that is out of bounds.
+
+Flow control: exceptions can be used to control the flow of execution based on certain conditions, such as raising an exception if a certain condition is not met.
+
+Cleanup: exceptions can be used to ensure that certain cleanup actions are taken, such as closing a file or releasing a resource, regardless of whether or not an error occurs.
+
+Q19. If you don't do something extra to treat an exception, the script will terminate and an error message will be displayed.
+
+Q20. To recover from an exception in your script, you can use a try-except block to catch the exception and take appropriate action, such as printing an error message or attempting to recover from the error.
+
+Q21. Two methods for triggering exceptions in your script are:
+
+Raising exceptions manually with the raise statement
+
+Encountering conditions that cause exceptions to be raised automatically, such as dividing by zero or accessing an index that is out of bounds.
+
+Q22. Two methods for specifying actions to be executed at termination time, regardless of whether or not an exception exists, are:
+
+Using the finally clause in a try-except-finally block
+
+Using the atexit module to register a function that will be executed when the script terminates.
+
+Q23. The purpose of the try statement is to define a block of code that may raise an exception and to specify how to handle exceptions that occur in that block.
+
+Q24. The two most popular try statement variations are:
+
+try-except: this is used to catch exceptions and take appropriate action.
+
+try-finally: this is used to specify actions that must be taken regardless of whether or not an exception occurs.
+
+Q25. The purpose of the raise statement is to raise an exception manually, allowing you to control the flow of execution and handle errors in a specific way.
+
+Q26. The assert statement checks whether a condition is true, and if it is not, an AssertionError exception is raised. It is similar to the if statement, but the assert statement is used specifically for debugging and is intended to be removed in production code.
+Q27. The with/as statement is used to wrap the execution of a block of code with methods defined by a context manager. A context manager is an object that defines the methods enter and exit. The with/as statement ensures that the exit method is called when the block of code is finished, even if an exception is raised. The with/as statement is similar to try/finally.
+
+Q28. *args and **kwargs are special syntax in Python used to pass a variable number of arguments to a function. *args is used to pass a non-keyworded, variable-length argument list, while **kwargs is used to pass keyworded, variable-length argument dictionaries.
+
+Q29. To pass optional or keyword parameters from one function to another, you can include the parameters in the function call, with their respective values. The called function can then access these values using the names of the parameters.
+
+Q30. Lambda functions are anonymous functions in Python, created using the lambda keyword. These functions are useful for creating small, throw-away functions, especially when using them as arguments to other functions.
+
+Q31. Inheritance in Python allows a class to inherit attributes and behavior from a parent class. This allows for code reuse and helps to create a more organized and modular codebase. An example of inheritance in Python would be:
+
+rubyCopy code
+
+class Parent: def __init__(self, value): self.value = value class Child(Parent): def __init__(self, value, extra_value): super().__init__(value) self.extra_value = extra_value 
+
+Q32. If class C inherits from classes A and B, and both classes A and B have their own versions of method func(), the method from class A is called.
+
+Q33. The built-in type() function and the isinstance() function are used to determine the type of an instance and to check for inheritance, respectively.
+
+Q34. The nonlocal keyword is used in nested functions to indicate that a variable is defined in the nearest enclosing scope that is not global. It allows you to assign to a variable defined in the nearest enclosing scope that is not global.
+
+Q35. The global keyword is used in Python to indicate that a variable is a global variable, and not a local variable. It allows you to access the global variable within a function or to assign a new value to the global variable.
